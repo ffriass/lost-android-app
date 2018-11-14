@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1001271299704",
+    "firebase_url": "https://lost-1214.firebaseio.com",
+    "project_id": "lost-1214",
+    "storage_bucket": "lost-1214.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001271299704:android:9e39c3cdfb662fd4",
+        "android_client_info": {
+          "package_name": "com.alticeacademy.lost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001271299704-eepk7tnajls395fok4u7pg6eqn2946d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs8MiiLq4B6z1bKJyEIb3vdoYCLDslNlU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
