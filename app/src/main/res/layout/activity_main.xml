@@ -18,14 +18,6 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        app:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_add_black_24dp"/>
-
     <FrameLayout
         android:id="@+id/secundaryContainer"
         android:layout_width="match_parent"
@@ -39,6 +31,17 @@
 
         </android.support.v7.widget.RecyclerView>
 
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                app:backgroundTint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_add_black_24dp"
+                android:visibility="visible"
+                android:layout_marginBottom="80dp"
+                />
+
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"
@@ -51,7 +54,10 @@
             app:menu="@menu/navigation"
             android:layout_gravity="bottom"/>
 
+
     </FrameLayout>
+
+
 
 
 
