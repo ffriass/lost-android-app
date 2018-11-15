@@ -5,4 +5,6 @@
     <dimen name="icon_navbar_with">24dp</dimen>
     <dimen name="icon_navbar_height">24dp</dimen>
 
+    <dimen name="elvation_actionbar">4dp</dimen>
+
 </resources>

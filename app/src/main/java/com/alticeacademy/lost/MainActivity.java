@@ -4,8 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -45,11 +49,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.mybutton).setOnClickListener(this);
+        Toolbar toolbar = findViewById(R.id.myActioBar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab =  findViewById(R.id.fab);
 
         mTextMessage = findViewById(R.id.txtTabName);
         BottomNavigationView myNavigation = findViewById(R.id.navigation);
         myNavigation.setOnNavigationItemSelectedListener(myNavigationItem);
+
 
     }
 
@@ -61,5 +69,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         //goActivity(this, Main2Activity.class);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_elements, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.toolbar_notification :
+                mTextMessage.setText("Panel de Notificaciones");
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
