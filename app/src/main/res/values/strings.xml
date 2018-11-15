@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lost</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_post">To post</string>
+    <string name="title_message">Messages</string>
+    <string name="title_setting">Setings</string>
+
 </resources>
