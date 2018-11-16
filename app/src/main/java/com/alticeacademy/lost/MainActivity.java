@@ -4,43 +4,50 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.alticeacademy.lost.fragments.BaseFragment;
+import com.alticeacademy.lost.fragments.HomeFragment;
+import com.alticeacademy.lost.fragments.MessagesFragment;
+import com.alticeacademy.lost.fragments.PostingFragment;
+import com.alticeacademy.lost.fragments.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener myNavigationItem
+    private BottomNavigationView.OnNavigationItemSelectedListener myNavigationItemListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            Fragment selectedFragment = null;
+
             switch (menuItem.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
+                    selectedFragment = new HomeFragment();
+                    break;
                 case R.id.navigation_profile:
-                    mTextMessage.setText(R.string.title_profile);
-                    return true;
+                    selectedFragment = new ProfileFragment();
+                    break;
                 case R.id.navigation_post:
-                    mTextMessage.setText(R.string.title_post);
-                    return  true;
+                    selectedFragment = new PostingFragment();
+                    break;
                 case R.id.navigation_message:
-                    mTextMessage.setText(R.string.title_message);
-                    return true;
+                    selectedFragment = new MessagesFragment();
+                    break;
                 case R.id.navigation_settings:
-                    mTextMessage.setText(R.string.title_setting);
-                    return true;
+                    selectedFragment = new MessagesFragment();//temporary
+                  break;
             }
-            return false;
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentsContainer,
+                    selectedFragment).commit();
+            return true;
         }
     };
 
@@ -49,18 +56,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*RecyclerView recyclerView = findViewById(R.id.my_recycler_view);
+        recyclerView.setFocusable(true);*/
         Toolbar toolbar = findViewById(R.id.myActioBar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab =  findViewById(R.id.fab);
-
-        mTextMessage = findViewById(R.id.txtTabName);
+       // FloatingActionButton fab =  findViewById(R.id.fab);
         BottomNavigationView myNavigation = findViewById(R.id.navigation);
-        myNavigation.setOnNavigationItemSelectedListener(myNavigationItem);
+        myNavigation.setOnNavigationItemSelectedListener(myNavigationItemListener);
 
-
+        //I added this if statement to keep the selected fragment when rotating the device
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentsContainer,
+                    new HomeFragment()).commit();
+        }
     }
-
 
     public void goActivity(Context context, Class myClass){
         startActivity(new Intent(context, myClass));
@@ -82,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.toolbar_notification :
-                mTextMessage.setText("Panel de Notificaciones");
+
                 break;
         }
         return super.onOptionsItemSelected(item);

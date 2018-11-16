@@ -8,10 +8,12 @@
     android:elevation="@dimen/elvation_actionbar"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:layout_scrollFlags="scroll|enterAlways"
     >
 
 
     <EditText
+        android:id="@+id/edtSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -19,6 +21,6 @@
         android:drawableStart="@drawable/ic_search_24dp"
         android:background="@drawable/oval"
         android:textSize="14sp"
-        android:hint="Search"/>
+        android:hint="@string/search"/>
 
 </android.support.v7.widget.Toolbar>
