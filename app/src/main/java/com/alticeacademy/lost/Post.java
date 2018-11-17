@@ -1,30 +1,31 @@
 package com.alticeacademy.lost;
 
-public class Post {
+public class Post extends BaseEntity {
 
-    private String postID;
-    private  String nameLost;
+    private  String postID;
+    private  String lostName;
     private  String postDescription;
-    private  String datePost;
+    private  String postDate;
     private  String userName;
-    private String imageLost;
+    private  String imageLostURL = "http://vinrosa.com/example/pineapple.jpg";
+    private String userFaceURL;
 
     public Post() {
     }
 
     public Post(String postID, String nameLost, String postDescription, String datePost, String userName, String imageLost) {
         this.postID = postID;
-        this.nameLost = nameLost;
+        this.lostName = nameLost;
         this.postDescription = postDescription;
-        this.datePost = datePost;
+        this.postDate = datePost;
         this.userName = userName;
-        this.imageLost = imageLost;
+        this.imageLostURL = imageLost;
     }
 
     public Post(String postID, String nameLost, String datePost, String userName) {
         this.postID = postID;
-        this.nameLost = nameLost;
-        this.datePost = datePost;
+        this.lostName = nameLost;
+        this.postDate = datePost;
         this.userName = userName;
     }
 
@@ -37,12 +38,12 @@ public class Post {
         this.postID = postID;
     }
 
-    public String getNameLost() {
-        return nameLost;
+    public String getLostName() {
+        return lostName;
     }
 
-    public void setNameLost(String nameLost) {
-        this.nameLost = nameLost;
+    public void setLostName(String lostName) {
+        this.lostName = lostName;
     }
 
     public String getPostDescripcion() {
@@ -53,12 +54,12 @@ public class Post {
         this.postDescription = postDescripcion;
     }
 
-    public String getDatePost() {
-        return datePost;
+    public String getPostDate() {
+        return postDate;
     }
 
-    public void setDatePost(String datePost) {
-        this.datePost = datePost;
+    public void setPostDate(String postDate) {
+        this.postDate = postDate;
     }
 
     public String getUserName() {
@@ -69,12 +70,20 @@ public class Post {
         this.userName = userName;
     }
 
-    public String getImageLost() {
-        return imageLost;
+    public String getImageLostURL() {
+        return imageLostURL;
     }
 
-    public void setImageLost(String imageLost) {
-        this.imageLost = imageLost;
+    public void setImageLostURL(String imageLostURL) {
+        this.imageLostURL = imageLostURL;
+    }
+
+    public String getUserFaceURL() {
+        return userFaceURL;
+    }
+
+    public void setUserFaceURL(String userFaceURL) {
+        this.userFaceURL = userFaceURL;
     }
 
 

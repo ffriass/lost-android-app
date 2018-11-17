@@ -5,20 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:id="@+id/mainContainer">
+    android:id="@+id/mainContainer"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
-    <include android:id="@+id/myActioBar"
-        layout="@layout/toolbar">
-    </include>
-
-    <FrameLayout
-        android:id="@+id/fragmentsContainer"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:layout_above="@+id/navigation">
+        android:layout_above="@+id/navigation"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
 
-    </FrameLayout>
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <include android:id="@+id/myActioBar"
+                layout="@layout/toolbar">
+            </include>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fragmentsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:layout_above="@+id/navigation"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </FrameLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"

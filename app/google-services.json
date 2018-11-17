@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1001271299704-iu98j23ggnjibss855a46mn2blc0jmfe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alticeacademy.lost",
+            "certificate_hash": "27c8ce3a0c4dc2f46f40c65766a7d47b80879ed8"
+          }
+        },
+        {
           "client_id": "1001271299704-eepk7tnajls395fok4u7pg6eqn2946d3.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001271299704-eepk7tnajls395fok4u7pg6eqn2946d3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
